@@ -1,3 +1,4 @@
+/* Exporting the function getCompliment to be used in other files. */
 module.exports = {
 
     getCompliment: (req, res) => {

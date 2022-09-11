@@ -1,3 +1,5 @@
+/* This is the server file. It is importing express and cors, setting up the server, and importing the
+controller. */
 const express = require("express");
 const cors = require("cors");
 
