@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="style.css">
   </head>
  
   
-  <body class="container">
+  <body>
 
-    <section class="showcase">
-      <video src="./" autoplay loop muted></video>
-      <h1 class="title">DevMountain</h1>
-     </section>
+      <div class="container">
+        <video autoplay loop muted>
+          <source src="video.mp4" type="video/mp4">
+        </video>
+        <div class="text-box">
+          <h1>DevMountain</h1>
+        </div>
+      </div>
 
+      <section class="container">
     <button id="complimentButton">Get a compliment</button>
     <button id="fortuneButton">Get a fortune</button>
     
@@ -40,7 +47,7 @@
       <summary>How do I keep the motivation going?</summary>
       Have a plan, goal, and dream. Follow through with it and drink lots of coffee
      </details>
-
+    </section>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
   </body>
