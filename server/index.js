@@ -9,13 +9,12 @@ app.use(cors());
 
 app.use(express.json());
 
-const { getCompliment } = require('./controller')
-const { getFortune } = require('./controller')
-const { getFuture } = require('./controller')
+const {getCompliment, getFortune, getFuture, getMotivation, deleteMotivation} = require('./controller');
 
- 
 app.get("/api/fortune", getFortune);
 app.get("/api/compliment", getCompliment);
 app.get("/api/future", getFuture)
-
+app.get("/api/motivation", getMotivation)
+app.delete("/api/motivation/:id", deleteMotivation)
+                                    
 app.listen(5000, () => console.log("Server running on 5000"));

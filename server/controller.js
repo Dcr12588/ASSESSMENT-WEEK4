@@ -1,4 +1,6 @@
 /* Exporting the function getCompliment to be used in other files. */
+
+const motivations = [{id:1, message:`keep pushing!`}, {id:2, message:`Dont give up!`}]
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -28,7 +30,18 @@ module.exports = {
       
         res.status(200).send(randomFuture);
     },
-    
-
-}
-
+    getMotivation: (req, res) => {
+      
+        // choose random motivational reading
+        let randomIndex = Math.floor(Math.random() * motivations.length);
+        let randomMotivation = motivations[randomIndex];
+      
+        res.status(200).send(randomMotivation);
+    },
+    deleteMotivation: (req,res) => {
+        console.log(req.params)
+        let index =  motivations.findIndex(elem => elem.id === +req.params.id);
+        motivations.splice(index, 1);
+        res.status(200).send(motivations);
+    },
+     }

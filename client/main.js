@@ -3,6 +3,7 @@ getCompliment function will make a get request to the server and then alert the 
 const complimentBtn = document.getElementById("complimentButton")
 const fortuneBtn = document.getElementById("fortuneButton")
 const futureBtn = document.getElementById("futureButton")
+const motivationBtn = document.getElementById("motivationButton")
 
 const getCompliment = () => {
     axios.get("http://localhost:5000/api/compliment/")
@@ -38,3 +39,25 @@ const getFuture = () => {
 futureBtn.addEventListener('click', getFuture)
 
 
+const getMotivation = () => {
+    axios.get("http://localhost:5000/api/motivation/")
+        .then(res => {
+            const data = res.data;
+            alert(data.message);
+            console.log(data)
+            if (data.id === 2){
+             return deleteMotivation(data.id);
+            }
+            
+    });
+};
+
+motivationBtn.addEventListener('click', getMotivation)
+
+
+
+const deleteMotivation = id => axios.delete(`http://localhost:5000/api/motivation/${id}`)
+
+
+
+                                                                           
